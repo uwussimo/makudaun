@@ -9,6 +9,11 @@ Make sure you have deno@latest installed on your machine. Simply run:
 deno compile --allow-all --allow-write ./mod.ts
 ```
 
+## Installing
+```shell
+deno install https://deno.land/x/makudaun@0.1.0/mod.ts
+```
+
 ## Usage
 
 Simply get the compiled binary and execute the following
