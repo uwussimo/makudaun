@@ -1,5 +1,5 @@
 import styles from "./styles.ts"
-import { showdown } from "./deps.ts";
+import showdown from "https://esm.sh/showdown@1.9.0";
 
 const markdown = await Deno.readTextFile("./readme.md");
 
