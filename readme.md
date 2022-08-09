@@ -13,6 +13,6 @@ deno compile --allow-all --allow-write ./mod.ts
 
 Simply get the compiled binary and execute the following
 
-````shell
+```shell
 makudaun input.md output.html
-````
+```

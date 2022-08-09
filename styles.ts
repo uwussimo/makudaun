@@ -1,4 +1,4 @@
-export default  `
+export default `
 body {
     font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #111;
@@ -178,4 +178,4 @@ h1, h2, h3 {
     border-bottom: 1px solid #eaecef;
     color: #111;
 }
-`
+`;

@@ -1,19 +1,20 @@
 import help from "./help.ts";
-import styles from "./styles.ts"
+import styles from "./styles.ts";
 import showdown from "https://esm.sh/showdown@1.9.0";
 
-const input = Deno.args[0]
-const output = Deno.args[1] || "index.html"
+const input = Deno.args[0];
+const output = Deno.args[1] || "index.html";
 
+// ~No input? Jeez~
 if (!input) {
-  console.log(help.trim())
-  Deno.exit(1)
+  console.log(help.trim());
+  Deno.exit(1);
 }
 
 // Read the file
 const markdown = await Deno.readTextFile(input).catch(() => {
-  console.error(`Seems like there is no ${input} file in there...`)
-  Deno.exit(1)
+  console.error(`Seems like there is no ${input} file in there...`);
+  Deno.exit(1);
 });
 
 // Converter from md to html
@@ -28,7 +29,7 @@ const converter = new showdown.Converter({
 const preContent = `
 <html lang="en">
   <head>
-    <title>` + "README" + `</title>
+    <title>` + input.replace(".md", "") + `</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
