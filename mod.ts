@@ -45,7 +45,7 @@ const postContent = `
 `;
 
 // converter.setFlavor("github");
-const html = preContent + converter.makeHtml(markdown) + postContent;
+const html = preContent.trim() + converter.makeHtml(markdown) + postContent.trim();
 
 // Write converted output to file
 await Deno.writeTextFile(output, html);
