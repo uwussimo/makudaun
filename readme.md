@@ -11,7 +11,7 @@ deno compile --allow-all --allow-write ./mod.ts
 
 ## Installing
 ```shell
-deno install https://deno.land/x/makudaun@0.1.0/mod.ts
+deno install https://deno.land/x/makudaun@0.2.0/mod.ts
 ```
 
 ## Usage

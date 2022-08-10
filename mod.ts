@@ -1,6 +1,6 @@
 import help from "./help.ts";
 import styles from "./styles.ts";
-import showdown from "https://esm.sh/showdown@1.9.0";
+import showdown from "https://esm.sh/showdown@2.1.0";
 
 const input = Deno.args[0];
 const output = Deno.args[1] || "index.html";
@@ -20,10 +20,13 @@ const markdown = await Deno.readTextFile(input).catch(() => {
 // Converter from md to html
 const converter = new showdown.Converter({
   ghCompatibleHeaderId: true,
-  simpleLineBreaks: true,
+  openLinksInNewWindow: true,
   ghMentions: true,
   tables: true,
 });
+
+// Use GitHub's Flavor
+showdown.setFlavor('github');
 
 // Post beginning of HTML file
 const preContent = `
@@ -45,7 +48,11 @@ const postContent = `
 `;
 
 // converter.setFlavor("github");
+// Complete
 const html = preContent.trim() + converter.makeHtml(markdown) + postContent.trim();
+
+// Partial
+// const html = converter.makeHtml(markdown);
 
 // Write converted output to file
 await Deno.writeTextFile(output, html);
